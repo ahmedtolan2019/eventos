@@ -17,4 +17,13 @@ app.use("/", express.static("../client/build"));
 - express js
 - http graphql
 - apollo graphql client
-- Jwt http-only cookie server Authintication with context api in the client 
+- Jwt http-only cookie server Authentication with context api in the client 
+
+## Features
+- login/signup
+- Auth Routes And UnAuth Routes
+- http-only Jwt Cookie
+- book Event
+- Cancel Booking
+- create/edit/delete/view event
+- graphql api server
