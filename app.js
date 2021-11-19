@@ -43,7 +43,7 @@ app.use("/", express.static("../client/build"));
 const port = process.env.PORT || 3001;
 mongoose
   .connect(
-    "mongodb+srv://tolan:SvKvu1mkSwEA2QAM@cluster0.wr5tu.mongodb.net/event-react-app?retryWrites=true&w=majority"
+    "mongourl"
   )
   .then(() => {
     console.log("db connected");
