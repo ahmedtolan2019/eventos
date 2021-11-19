@@ -14,6 +14,7 @@ app.use(cookieParser());
 
 const graphqlSchema = require("./graphql/schema/index");
 const graphqlResolvers = require("./graphql/resolvers/index");
+const history = require("connect-history-api-fallback");
 
 app.use(isAuth);
 const context = (req) => {
@@ -36,9 +37,14 @@ app.use(
   })
 );
 
+//production
+app.use(history());
+app.use("/", express.static("../client/build"));
 const port = process.env.PORT || 3001;
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(
+    "mongodb+srv://tolan:SvKvu1mkSwEA2QAM@cluster0.wr5tu.mongodb.net/event-react-app?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("db connected");
     app.listen(port, () => console.log(`Server is Up and Running On ${port}`));

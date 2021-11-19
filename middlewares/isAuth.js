@@ -58,7 +58,7 @@ module.exports = (req, res, next) => {
   //if here try to verify with jwt using sectret ket
   let decodedToken;
   try {
-    decodedToken = jwt.verify(token, process.env.TOKEN_SECRET_KEY);
+    decodedToken = jwt.verify(token, "tolanSecretKey");
   } catch (error) {
     req.isAuth = false;
     return next();

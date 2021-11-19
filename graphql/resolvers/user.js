@@ -39,7 +39,7 @@ module.exports = {
       const expiresIn = 3600;
       const token = jwt.sign(
         { email: existedUser.email, userId: existedUser.id },
-        process.env.TOKEN_SECRET_KEY,
+        "tolanSecretKey",
         {
           expiresIn: expiresIn,
         }
@@ -48,8 +48,7 @@ module.exports = {
         httpOnly: true,
         maxAge: expiresIn * 1000,
       });
-      const expiresAt = await jwt.verify(token, process.env.TOKEN_SECRET_KEY)
-        .exp;
+      const expiresAt = await jwt.verify(token, "tolanSecretKey").exp;
       return {
         userId: existedUser.id,
         token: token,
