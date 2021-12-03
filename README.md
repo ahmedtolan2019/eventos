@@ -1,5 +1,5 @@
 # eventos
-an event Booking and Creation Website
+A Reactjs, Express Server , graphql, mongodb event Booking and Creation web app
 ## demo
 [Demo on Heroku](https://eventos-full-stack.herokuapp.com/)
 
